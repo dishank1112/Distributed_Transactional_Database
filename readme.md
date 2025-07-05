@@ -5,12 +5,39 @@ This project simulates a distributed transactional system using the **2-Phase Co
 - `delivery_service`
 - `storage_service`
 
+![Distributed_Simulation](images/flowchart.png)
+Simple Architecture
+
+![Distributed_Simulation](images/order_service_requests.png)
+Microservices
+
+![Distributed_Simulation](images/Distributed_Simulation.png)
+Simulating terminals and handling Concurrent Requests
+
+
+In distributed systems, coordinating transactions across multiple resources can be complex. In Order to Handle the Concurrency, the Two-Phase Commit Protocol (2PC) is a widely used approach to ensure atomic transactions in distributed systems.
+
+2PC operates in two phases: the Prepare Phase and the Commit Phase.
+
+Prepare/Reserve Phase:
+The coordinator sends a Prepare/reserve request to all availabl nodes .
+Each Nodechecks if it can complete the transaction and responds with either a Yes (reserved) or No (not_available).
+If any participant responds with a No, the process halts, and the transaction is rolled back.
+2. Commit Phase:
+
+If all participants respond with Yes, the coordinator sends a Commit command, and all participants commit the transaction.
+If any participant responds with No, the coordinator sends an Abort command to rollback the transaction across all participants.
+
+
+
 ## 🚀 Technologies Used
 - FastAPI
 - PostgreSQL
 - SQLAlchemy
 - Async HTTP (httpx)
 - Python 3.10+
+
+
 
 ## 🧠 How It Works
 - Each service runs independently on different ports.
