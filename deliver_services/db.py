@@ -29,6 +29,3 @@ class TxLog(Base):
     tx_id     = Column(String, primary_key=True, index=True)
     agent_id  = Column(Integer)
 
-# ─── Remove or comment out auto-create if you’re managing schema manually ───────
-# Base.metadata.create_all(bind=engine)
-# ────────────────────────────────────────────────────────────────────────────────

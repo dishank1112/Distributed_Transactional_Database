@@ -7,4 +7,4 @@ class TxRequest(BaseModel):
     orderId: int
 
 class Vote(BaseModel):
-    vote: str  # "yes" or "no"
+    vote: str 

@@ -16,7 +16,7 @@ async def place_one(i: int):
             print(f"Order {i:02d} → ERROR: {repr(e)}")
 
 async def main():
-    tasks = [place_one(i) for i in range(1, 20)]
+    tasks = [place_one(i) for i in range(1, 6)]
     await asyncio.gather(*tasks)
 
 if __name__ == "__main__":
